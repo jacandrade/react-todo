@@ -39,4 +39,22 @@ describe('TodoAPI', () => {
             expect(actualTodos).toEqual(todos);
         });
     });
+
+
+    describe('filterTodos', () => {
+        var todos = [{id:1, text:'testing component 1', completed: true}, 
+        {id:2, text:'testing component 2', completed: false},
+        {id:3, text:'testing component 3', completed: true}
+        ];
+        it('should return all item if showcompleted is true', () => {
+            var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+            expect(filteredTodos.length).toBe(3);
+        });
+
+        it('should return only NOT completed items if showcompleted is false', () => {
+            var filteredTodos = TodoAPI.filterTodos(todos, false, '');
+            expect(filteredTodos.length).toBe(1);
+        });
+
+    });
 });
