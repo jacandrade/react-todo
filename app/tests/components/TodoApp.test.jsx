@@ -20,7 +20,7 @@ describe('TodoApp', () => {
         expect(todoApp.state.todos[0].text).toBe(todoText);
     });
 
-    it('should toggle copmpleted value when handleToggle called', () => {
+    it('should toggle completed value when handleToggle called', () => {
         var todoData = {
             id: 11,
             text: 'Test feature',
