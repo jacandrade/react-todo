@@ -34,13 +34,18 @@ describe('Reducers', () => {
             
             var action = {
                 type: 'ADD_TODO',
-                text: 'some string'
+                todo: {
+                    id:'123',
+                    text: 'test',
+                    completed: false,
+                    createdAt: 98565
+                }
             };
 
             var res = Reducers.todosReducer(df([]), df(action));
 
             expect(res.length).toEqual(1);
-            expect(res[0].text).toEqual(action.text);
+            expect(res[0]).toEqual(action.todo);
         });
 
         it('should toggle completed when given id', () => {
