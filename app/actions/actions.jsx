@@ -103,7 +103,7 @@ export var startLogin = () => {
 export var startLogout = () => {
     return (dispatch, getState) => {
         return firebase.auth().signOut().then(() => {
-            console.log('logout')   
+            console.log('logout');   
         });
     }   
 }
